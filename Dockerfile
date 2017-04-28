@@ -13,4 +13,4 @@ RUN npm install nodejs_steambot && \
 
 ENV STEAMBOT_SCRIPT="index.js"
 
-CMD node /node_modules/nodejs_steambot/${STEAMBOT_SCRIPT} ]
+CMD node /node_modules/nodejs_steambot/${STEAMBOT_SCRIPT}
