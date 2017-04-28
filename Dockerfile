@@ -2,7 +2,15 @@ FROM node
 
 RUN npm install nodejs_steambot && \
     mkdir /configs/ && \
+    mkdir /logs/ && \
+    mkdir /data/ && \
     chmod 777 /configs/ && \
-    ln -s /configs /node_modules/nodejs_steambot/configs
+    chmod 777 /logs/ && \
+    chmod 777 /data/ && \
+    ln -s /configs /node_modules/nodejs_steambot/configs && \
+    ln -s /logs /node_modules/nodejs_steambot/logs && \
+    ln -s /data /node_modules/nodejs_steambot/data
 
-CMD [ "node", "node_modules/nodejs_steambot/index.js"]
+ENV STEAMBOT_SCRIPT="index.js"
+
+CMD node /node_modules/nodejs_steambot/${STEAMBOT_SCRIPT} ]
